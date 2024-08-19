@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://root:root@cluster0.bbbjl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journalDB-dev
+      auto-index-creation: true
+  application:
+    name: JOURNAL-SERVICE-DEV
+stock:
+  apiKey: 66c03b19d9a207.01769437
+weather:
+  apiKey: 484eb5b0ff73762ee1ab84862b62f3fd
+eleven:
+  apiKey: sk_6555b4a11527cab2693fcdf8719cc842b584a86ad0bcbe13
+
