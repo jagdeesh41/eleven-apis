@@ -2,6 +2,8 @@ package kom.learning.journal.controller;
 
 import kom.learning.journal.dto.StockResponseDto;
 import kom.learning.journal.entity.User;
+import kom.learning.journal.schedulers.MailScheduler;
+import kom.learning.journal.service.EmailService;
 import kom.learning.journal.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,8 @@ import java.util.List;
 @Slf4j
 public class UserController {
     private final UserService userService;
+    private final EmailService emailService;
+    private final MailScheduler mailScheduler;
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok()
@@ -43,4 +47,18 @@ public class UserController {
     {
         return ResponseEntity.ok().body(userService.getUserWithEmailAndSentimentAnalysis());
     }
+    @GetMapping("/email/send")
+    public ResponseEntity<List<User>> sendEmail()
+    {
+        emailService.sendEmail("farooqueAltair@gmail.com","hi buddy","I am sending a mock mail to you");
+        return ResponseEntity.ok().build();
+    }
+    @GetMapping("/sentimentAnalysis")
+    public ResponseEntity<Void> sendSentiment()
+    {
+        mailScheduler.fetchUsersAndSendSentimentAnalysisMail();
+        return ResponseEntity.ok().build();
+
+    }
+
 }

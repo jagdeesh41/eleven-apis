@@ -5,6 +5,9 @@ spring:
       port: 27017
       database: journal_db_test
       auto-index-creation: true
+  redis:
+    host: localhost
+    port: 6379
   application:
     name: JOURNAL-SERVICE
 server:

@@ -5,6 +5,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -19,5 +20,5 @@ public class Journal {
     private ObjectId id;
     private String title;
     private String content;
-    private Date date;
+    private LocalDate date;
 }

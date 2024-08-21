@@ -23,7 +23,7 @@ public class UserRepositoryImpl {
         log.info("{}",users);
         return users;
     }
-    public List<User> getUserWithEmailAndSentimentAnalysis()
+    public List<User> getUsersWithEmailAndSentimentAnalysis()
     {
         Query query=new Query();
         Criteria criteria1 = Criteria.where("email").regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");

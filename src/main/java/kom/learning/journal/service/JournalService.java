@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class JournalService {
     private final JournalRepository journalRepository;
     public ResponseDto createJournalEntry(RequestDto requestDto) {
         Journal journal = new Journal();
-        journal.setDate(requestDto.getDate());
+        journal.setDate(LocalDate.now());
         journal.setContent(requestDto.getContent());
         journal.setTitle(requestDto.getTitle());
         Journal journal1 = journalRepository.save(journal);
@@ -47,7 +48,6 @@ public class JournalService {
         new ArrayList<>(List.of(1,2,3,4));
         return savedJournal;
     }
-
     public List<Journal> getMyJournalByTitle(String title)
     {
         log.info("Getting  journal Data matching with title");

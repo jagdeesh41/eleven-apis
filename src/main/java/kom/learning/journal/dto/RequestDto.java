@@ -2,6 +2,7 @@ package kom.learning.journal.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 @Getter
 @Setter
@@ -12,7 +13,7 @@ import java.util.Date;
 public class RequestDto {
     private String title;
     private String content;
-    private Date date;
+    private LocalDate date;
 }
 
 

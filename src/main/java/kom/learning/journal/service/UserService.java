@@ -23,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -89,7 +90,7 @@ public class UserService {
     }
     public void createJournalEntryForUser(String userName, Journal journal)
     {
-        journal.setDate(new Date());
+        journal.setDate(LocalDate.now());
         User user=userRepository.findByUserName(userName);
         journalRepository.save(journal);
         List<Journal>journals=user.getJournals();
@@ -132,7 +133,7 @@ public class UserService {
     }
     public List<User> getUserWithEmailAndSentimentAnalysis()
     {
-        return userRepositoryImpl.getUserWithEmailAndSentimentAnalysis();
+        return userRepositoryImpl.getUsersWithEmailAndSentimentAnalysis();
     }
 
 }
