@@ -1,7 +1,7 @@
 package kom.learning.journal.service;
 
 import kom.learning.journal.AppCache;
-import kom.learning.journal.constants.URLS;
+import kom.learning.journal.enums.URLS;
 import kom.learning.journal.dto.RequiredWeatherResponseDto;
 import kom.learning.journal.dto.WeatherResponseDto;
 import lombok.RequiredArgsConstructor;

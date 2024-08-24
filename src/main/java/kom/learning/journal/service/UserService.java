@@ -1,10 +1,7 @@
 package kom.learning.journal.service;
 
-import static kom.learning.journal.constants.Constant.*;
-
 import kom.learning.journal.AppCache;
-import kom.learning.journal.constants.Constant;
-import kom.learning.journal.constants.URLS;
+import kom.learning.journal.enums.URLS;
 import kom.learning.journal.dto.StockResponseDto;
 import kom.learning.journal.entity.Journal;
 import kom.learning.journal.entity.Stock;
@@ -24,7 +21,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

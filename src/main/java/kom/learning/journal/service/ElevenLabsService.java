@@ -1,6 +1,6 @@
 package kom.learning.journal.service;
 
-import kom.learning.journal.constants.URLS;
+import kom.learning.journal.enums.URLS;
 import kom.learning.journal.dto.RequestAudioDto;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
